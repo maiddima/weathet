@@ -4,9 +4,10 @@
 
 ### Used Technologies
 
-[Open Weather API](https://openweathermap.org/api)
-[Bulma](https://bulma.io/)
+* [Open Weather API](https://openweathermap.org/api)
+* [Bulma](https://bulma.io/)
 
 #### Author
-* [Imrhan Dareine MINKO AMOA](https://github.com/maiddima) - <iminkoamoa@gmail.com>
+
+[Imrhan Dareine MINKO AMOA](https://github.com/maiddima) - <iminkoamoa@gmail.com>
 
