@@ -35,7 +35,7 @@ require_once 'delete_widget.php';
                             </span>
                         </div>
                         <div class="control">
-                            <button type="submit" class="button is-primary">Add</button>
+                            <button type="submit" class="button is-dark">Add</button>
                         </div>
                     </div>
                 </form>
