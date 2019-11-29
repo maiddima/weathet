@@ -38,4 +38,3 @@ if (empty($_SESSION['array_widget'])) {
 
     echo '</div>';
 }
-?>

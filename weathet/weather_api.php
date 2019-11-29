@@ -1,89 +1,92 @@
 <?php
 
+if (isset($_POST['city_input'])) {
 
-if (isset($_POST['unity']) == "Celsius" && isset($_POST['city_input'])){
+    if(isset($_POST['unity'])) {
 
-    $url = "http://api.openweathermap.org/data/2.5/weather?q=".$_POST['city_input']."&units=metric&type=accurate&appid=0a72c24c164f0742864d129aada49e53";
+        if ($_POST['unity'] == "Celsius") {
 
-    $json = file_get_contents($url);
+            $url = "http://api.openweathermap.org/data/2.5/weather?q=".$_POST['city_input']."&units=metric&type=accurate&appid=0a72c24c164f0742864d129aada49e53";
 
-    $data = json_decode($json, true);
+            $json = file_get_contents($url);
 
-    $description = $data['weather'][0]['description'];
+            $data = json_decode($json, true);
 
-    $temperature = intval($data['main']['temp']);
+            $description = $data['weather'][0]['description'];
 
-    $id_icon = $data['weather'][0]['id'];
+            $temperature = intval($data['main']['temp']);
 
-    $unity = "Celsius";
+            $id_icon = $data['weather'][0]['id'];
 
-    $name = $data['name'];
+            $unity = "Celsius";
 
-    $add_weather =  array (
-      'description' => $description,
-      'temperature' => $temperature,
-      'unity' => $unity,
-      'name' => $name,
-      'icon' => $id_icon
-    );
+            $name = $data['name'];
 
-    $_SESSION['array_widget'][] = $add_weather;
+            $add_weather =  array (
+              'description' => $description,
+              'temperature' => $temperature,
+              'unity' => $unity,
+              'name' => $name,
+              'icon' => $id_icon
+            );
 
+            $_SESSION['array_widget'][] = $add_weather;
 
-} else if (isset($_POST['unity']) == "Fahrenheit" && isset($_POST['city_input'])) {
+        } elseif ($_POST['unity'] == "Fahrenheit") {
 
-    $url = "http://api.openweathermap.org/data/2.5/weather?q=".$_POST['city_input']."&units=metric&type=accurate&appid=0a72c24c164f0742864d129aada49e53";
+            $url = "http://api.openweathermap.org/data/2.5/weather?q=".$_POST['city_input']."&units=imperial&type=accurate&appid=0a72c24c164f0742864d129aada49e53";
 
-    $json = file_get_contents($url);
+            $json = file_get_contents($url);
 
-    $data = json_decode($json, true);
+            $data = json_decode($json, true);
 
-    $description = $data['weather'][0]['description'];
+            $description = $data['weather'][0]['description'];
 
-    $temperature = intval($data['main']['temp']);
+            $temperature = intval($data['main']['temp']);
 
-    $id_icon = $data['weather'][0]['id'];
+            $id_icon = $data['weather'][0]['id'];
 
-    $unity = "Fahrenheit";
+            $unity = "Fahrenheit";
 
-    $name = $data['name'];
+            $name = $data['name'];
 
-    $add_weather =  array (
-      'description' => $description,
-      'temperature' => $temperature,
-      'unity' => $unity,
-      'name' => $name,
-      'icon' => $id_icon
-    );
+            $add_weather =  array (
+              'description' => $description,
+              'temperature' => $temperature,
+              'unity' => $unity,
+              'name' => $name,
+              'icon' => $id_icon
+            );
 
-    $_SESSION['array_widget'][] = $add_weather;
+            $_SESSION['array_widget'][] = $add_weather;
 
-} else if (isset($_POST['unity']) == "Kelvin" && isset($_POST['city_input'])) {
+        } elseif ($_POST['unity'] == "Kelvin"){
 
-    $url = "http://api.openweathermap.org/data/2.5/weather?q=".$_POST['city_input']."&units=metric&type=accurate&appid=0a72c24c164f0742864d129aada49e53";
+            $url = "http://api.openweathermap.org/data/2.5/weather?q=".$_POST['city_input']."&type=accurate&appid=0a72c24c164f0742864d129aada49e53";
 
-    $json = file_get_contents($url);
+            $json = file_get_contents($url);
 
-    $data = json_decode($json, true);
-    
-    $description = $data['weather'][0]['description'];
+            $data = json_decode($json, true);
 
-    $temperature = intval($data['main']['temp']);
+            $description = $data['weather'][0]['description'];
 
-    $id_icon = $data['weather'][0]['id'];
+            $temperature = intval($data['main']['temp']);
 
-    $unity = "Kelvin";
+            $id_icon = $data['weather'][0]['id'];
 
-    $name = $data['name'];
+            $unity = "Kelvin";
 
-    $add_weather =  array (
-      'description' => $description,
-      'temperature' => $temperature,
-      'unity' => $unity,
-      'name' => $name,
-      'icon' => $id_icon
-    );
+            $name = $data['name'];
 
-    $_SESSION['array_widget'][] = $add_weather;
+            $add_weather =  array (
+              'description' => $description,
+              'temperature' => $temperature,
+              'unity' => $unity,
+              'name' => $name,
+              'icon' => $id_icon
+            );
+
+            $_SESSION['array_widget'][] = $add_weather;
+        }
+    }
 }
-?>
