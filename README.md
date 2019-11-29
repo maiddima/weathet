@@ -4,8 +4,9 @@
 
 ### Used Technologies
 
+* [Bulma](https://bulma.io)
 * [Open Weather API](https://openweathermap.org/api)
-* [Bulma](https://bulma.io/)
+* [Erik Flowers Weather Icons](https://erikflowers.github.io/weather-icons)
 
 #### Author
 
